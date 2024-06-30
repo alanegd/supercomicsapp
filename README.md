@@ -1,4 +1,21 @@
-# supercomicsapp
+# Pasos para generar el proyecto:
+
+1. Crear la siguiente estructura de carpetas:
+
+```
+.
+└── lib
+    ├── dao
+    |
+    ├── database
+    |
+    ├── models
+    |
+    ├── screens
+    |    └── widgets
+    |
+    └── services
+```
 
 ## Pasos para cambiar el ícono de la app en Flutter:
 

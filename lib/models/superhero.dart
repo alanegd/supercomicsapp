@@ -1,5 +1,4 @@
 class Superhero {
-  late bool isFavorite;
   final String id;
   final String name;
   final Powerstats powerstats;
@@ -7,8 +6,7 @@ class Superhero {
   final Image image;
 
   Superhero(
-      {this.isFavorite = false,
-      required this.id,
+      {required this.id,
       required this.name,
       required this.powerstats,
       required this.appearance,
@@ -20,6 +18,25 @@ class Superhero {
         powerstats = Powerstats.fromJson(json['powerstats']),
         appearance = Appearance.fromJson(json['appearance']),
         image = Image.fromJson(json['image']);
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'intelligence': powerstats.intelligence,
+      'gender': appearance.gender,
+      'url': image.url
+    };
+  }
+
+  static Superhero fromMap(Map<String, dynamic> map) {
+    return Superhero(
+        id: map['id'],
+        name: map['name'],
+        powerstats: Powerstats(intelligence: map['intelligence']),
+        appearance: Appearance(gender: map['gender']),
+        image: Image(url: map['url']));
+  }
 }
 
 class Powerstats {
