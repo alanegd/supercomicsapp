@@ -21,7 +21,6 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   }
 
   initialize() async {
-    print("Hola");
     try {
       List<Superhero> results = await _superheroDao.getAll();
 
@@ -44,10 +43,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       ),
       body: Center(
         child: Column(
-          children: [
-            const Text(''),
-            Expanded(child: SuperheroList(superheroes: superheroes))
-          ],
+          children: [Expanded(child: SuperheroList(superheroes: superheroes))],
         ),
       ),
     );
