@@ -4,7 +4,7 @@ import 'package:sqflite/sqflite.dart';
 class AppDatabase {
   final int version = 1;
   final String databaseName = "superheroes";
-  final String tableName = "packages";
+  final String tableName = "superheroes";
   Database? db;
 
   Future<Database> openDb() async {
